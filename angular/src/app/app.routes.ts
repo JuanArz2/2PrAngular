@@ -7,14 +7,17 @@ import { PrivadoComponent } from "./components/privado/privado.component";
 import { ProductosComponent } from "./components/productos/productos.component";
 import { RegistrarseComponent } from "./components/registrarse/registrarse.component";
 import { ServiciosComponent } from "./components/servicios/servicios.component";
+import { PageErrorComponent } from "./components/page.error/page.error.component";
 
 export const routes: Routes = [
-    {path : 'contacto', component: ContactoComponent},
-    {path : 'iniciar.sesion', component: IniciarSesionComponent},
-    {path : 'inicio', component: InicioComponent},
-    {path : 'nosotros', component: NosotrosComponent},
-    {path : 'privado', component: PrivadoComponent},
-    {path : 'productos', component: ProductosComponent},
-    {path : 'registrarse', component: RegistrarseComponent},
-    {path : 'servicios', component: ServiciosComponent}
+    {path : 'contacto', component: ContactoComponent, title: "Contactanos"},
+    {path : 'iniciar.sesion', component: IniciarSesionComponent, title: "Login"},
+    {path : 'inicio', component: InicioComponent, title: "Inicio"},
+    {path : 'nosotros', component: NosotrosComponent, title: "Sobre Nosotros"},
+    {path : 'privado', component: PrivadoComponent, title: "Acceso Restringido"},
+    {path : 'productos', component: ProductosComponent, title: "Productos"},
+    {path : 'registrarse', component: RegistrarseComponent, title: "Registro"},
+    {path : 'servicios', component: ServiciosComponent, title: "Servicios"},
+    {path: "", redirectTo: "inicio", pathMatch: "full"},
+    {path : '**', component: PageErrorComponent, title: "Error 404"},
 ];
